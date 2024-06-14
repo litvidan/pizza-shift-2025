@@ -13,4 +13,17 @@
 	<string name="history_name_pattern">%s %s.</string>
 	<string name="history_title">Список займов</string>
 	<string name="history_amount_with_percent_pattern">%s под %.2f%%</string>
+
+	<!--	Details Screen -->
+	<string name="details_title">Детали займа</string>
+	<string name="details_first_name">Имя</string>
+	<string name="details_last_name">Фамилия</string>
+	<string name="details_amount">Сумма</string>
+	<string name="details_percent">Процент</string>
+	<string name="details_percent_pattern">%.2f%%</string>
+	<string name="details_status">Статус займа</string>
+	<string name="details_phone">Телефон</string>
+	<string name="details_issue_date">Дата</string>
+	<string name="details_period">Период</string>
+	<string name="details_period_pattern">%d мес.</string>
 </resources>
