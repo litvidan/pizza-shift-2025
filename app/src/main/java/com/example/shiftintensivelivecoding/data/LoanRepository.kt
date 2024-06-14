@@ -45,4 +45,7 @@ class LoanRepository {
 	private val loanApi by lazy {
 		retrofit.create(LoansApi::class.java)
 	}
+
+	suspend fun getAll(): List<LoanHistoryItem> =
+		loanApi.getAll()
 }
