@@ -2,6 +2,7 @@ package com.example.shiftintensivelivecoding.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import java.time.LocalDateTime
 
 @Serializable
 data class Loan(
@@ -15,7 +16,8 @@ data class Loan(
 	val status: LoanStatus,
 	val phone: String,
 	@SerialName("date")
-	val issueDate: String,
+	@Serializable(LocalDateTimeSerializer::class)
+	val issueDate: LocalDateTime,
 	@SerialName("period")
 	val monthPeriod: Int,
 )
