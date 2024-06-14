@@ -48,4 +48,7 @@ class LoanRepository {
 
 	suspend fun getAll(): List<LoanHistoryItem> =
 		loanApi.getAll()
+
+	suspend fun get(loanId: Long): Loan =
+		loanApi.get(loanId)
 }
