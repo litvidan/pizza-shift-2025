@@ -6,12 +6,15 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.example.shiftintensivelivecoding.R
 import com.example.shiftintensivelivecoding.data.LoanHistoryItem
 import com.example.shiftintensivelivecoding.formatAmountText
@@ -41,12 +44,22 @@ private fun LoanItem(
 		Modifier
 			.fillMaxWidth()
 			.clickable(onClick = onItemClicked)
+			.padding(vertical = 8.dp, horizontal = 16.dp)
 	) {
 		Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-			Text(text = formatBorrowerName(firstName = item.firstName, lastName = item.lastName))
-			Text(text = formatLoanStatus(status = item.status))
+			Text(
+				text = formatBorrowerName(firstName = item.firstName, lastName = item.lastName),
+				style = MaterialTheme.typography.bodyLarge,
+			)
+			Text(
+				text = formatLoanStatus(status = item.status),
+				style = MaterialTheme.typography.bodyLarge,
+			)
 		}
-		Text(text = stringResource(R.string.history_amount_with_percent_pattern, formatAmountText(amount = item.amount), item.percent))
+		Text(
+			text = stringResource(R.string.history_amount_with_percent_pattern, formatAmountText(amount = item.amount), item.percent),
+			style = MaterialTheme.typography.bodyMedium,
+		)
 	}
 }
 
