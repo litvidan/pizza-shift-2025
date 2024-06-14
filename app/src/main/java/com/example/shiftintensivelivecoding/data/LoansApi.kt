@@ -1,0 +1,3 @@
+package com.example.shiftintensivelivecoding.data
+
+interface LoansApi
