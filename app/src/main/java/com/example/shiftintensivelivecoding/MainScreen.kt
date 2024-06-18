@@ -10,6 +10,8 @@ import androidx.navigation.toRoute
 import com.example.shiftintensivelivecoding.data.LoanRepository
 import com.example.shiftintensivelivecoding.details.DetailsRoute
 import com.example.shiftintensivelivecoding.details.DetailsScreen
+import com.example.shiftintensivelivecoding.details.DetailsViewModel
+import com.example.shiftintensivelivecoding.details.DetailsViewModelFactory
 import com.example.shiftintensivelivecoding.history.HistoryRoute
 import com.example.shiftintensivelivecoding.history.HistoryScreen
 import com.example.shiftintensivelivecoding.history.HistoryViewModel
@@ -30,9 +32,9 @@ fun MainScreen(repository: LoanRepository) {
 			}
 			composable<DetailsRoute> {
 				val destination = it.toRoute<DetailsRoute>()
+				val viewModel = viewModel(DetailsViewModel::class.java, factory = DetailsViewModelFactory(destination.loanId, repository))
 				DetailsScreen(
-					loanId = destination.loanId,
-					repository = repository,
+					viewModel
 				)
 			}
 		}
