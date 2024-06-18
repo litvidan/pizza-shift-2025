@@ -4,6 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.example.shiftintensivelivecoding.data.LoanRepository
+import com.example.shiftintensivelivecoding.details.data.converter.LoanConverter
+import com.example.shiftintensivelivecoding.details.data.network.LoanApi
+import com.example.shiftintensivelivecoding.details.data.repository.LoanRepositoryImpl
+import com.example.shiftintensivelivecoding.details.domain.usecase.GetLoanUseCase
 import com.example.shiftintensivelivecoding.history.data.converter.LoanHistoryItemConverter
 import com.example.shiftintensivelivecoding.history.data.network.LoanHistoryApi
 import com.example.shiftintensivelivecoding.history.data.repository.LoanHistoryRepositoryImpl
@@ -22,6 +26,11 @@ class MainActivity : ComponentActivity() {
 	private val loanHistoryRepository: LoanHistoryRepository = LoanHistoryRepositoryImpl(loanHistoryApi, loanHistoryItemConverter)
 	private val getLoanHistoryItemsUseCase = GetLoanHistoryItemsUseCase(loanHistoryRepository)
 
+	private val loanApi = networkModule.retrofit.create(LoanApi::class.java)
+	private val loanConverter = LoanConverter()
+	private val loanRepository = LoanRepositoryImpl(loanApi, loanConverter)
+	private val getLoanUseCase = GetLoanUseCase(loanRepository)
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContent {
@@ -29,6 +38,7 @@ class MainActivity : ComponentActivity() {
 				MainScreen(
 					repository = repository,
 					getLoanHistoryItemsUseCase = getLoanHistoryItemsUseCase,
+					getLoanUseCase = getLoanUseCase,
 				)
 			}
 		}

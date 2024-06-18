@@ -10,6 +10,7 @@ import androidx.navigation.toRoute
 import com.example.shiftintensivelivecoding.data.LoanRepository
 import com.example.shiftintensivelivecoding.details.DetailsRoute
 import com.example.shiftintensivelivecoding.history.HistoryRoute
+import com.example.shiftintensivelivecoding.details.domain.usecase.GetLoanUseCase
 import com.example.shiftintensivelivecoding.details.presentation.DetailsViewModel
 import com.example.shiftintensivelivecoding.details.presentation.DetailsViewModelFactory
 import com.example.shiftintensivelivecoding.details.ui.DetailsScreen
@@ -22,6 +23,7 @@ import com.example.shiftintensivelivecoding.history.ui.HistoryScreen
 fun MainScreen(
 	repository: LoanRepository,
 	getLoanHistoryItemsUseCase: GetLoanHistoryItemsUseCase,
+	getLoanUseCase: GetLoanUseCase,
 ) {
 	val navController = rememberNavController()
 
@@ -36,7 +38,7 @@ fun MainScreen(
 			}
 			composable<DetailsRoute> {
 				val destination = it.toRoute<DetailsRoute>()
-				val viewModel = viewModel(DetailsViewModel::class.java, factory = DetailsViewModelFactory(destination.loanId, repository))
+				val viewModel = viewModel(DetailsViewModel::class.java, factory = DetailsViewModelFactory(destination.loanId, getLoanUseCase))
 				DetailsScreen(
 					viewModel
 				)

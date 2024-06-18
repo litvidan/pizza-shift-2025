@@ -1,6 +1,6 @@
 package com.example.shiftintensivelivecoding.details.presentation
 
-import com.example.shiftintensivelivecoding.data.Loan
+import com.example.shiftintensivelivecoding.details.domain.entity.Loan
 
 interface DetailsState {
 
