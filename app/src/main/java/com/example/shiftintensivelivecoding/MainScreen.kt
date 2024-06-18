@@ -9,13 +9,13 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.example.shiftintensivelivecoding.data.LoanRepository
 import com.example.shiftintensivelivecoding.details.DetailsRoute
-import com.example.shiftintensivelivecoding.details.DetailsScreen
-import com.example.shiftintensivelivecoding.details.DetailsViewModel
-import com.example.shiftintensivelivecoding.details.DetailsViewModelFactory
+import com.example.shiftintensivelivecoding.details.presentation.DetailsViewModel
+import com.example.shiftintensivelivecoding.details.presentation.DetailsViewModelFactory
+import com.example.shiftintensivelivecoding.details.ui.DetailsScreen
 import com.example.shiftintensivelivecoding.history.HistoryRoute
-import com.example.shiftintensivelivecoding.history.HistoryScreen
-import com.example.shiftintensivelivecoding.history.HistoryViewModel
-import com.example.shiftintensivelivecoding.history.HistoryViewModelFactory
+import com.example.shiftintensivelivecoding.history.presentation.HistoryViewModel
+import com.example.shiftintensivelivecoding.history.presentation.HistoryViewModelFactory
+import com.example.shiftintensivelivecoding.history.ui.HistoryScreen
 
 @Composable
 fun MainScreen(repository: LoanRepository) {

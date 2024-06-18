@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.history
+package com.example.shiftintensivelivecoding.history.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,6 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.shiftintensivelivecoding.R
+import com.example.shiftintensivelivecoding.history.presentation.HistoryState
+import com.example.shiftintensivelivecoding.history.presentation.HistoryViewModel
 
 @Composable
 fun HistoryScreen(

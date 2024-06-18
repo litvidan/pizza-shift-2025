@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.details
+package com.example.shiftintensivelivecoding.details.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,6 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.shiftintensivelivecoding.R
+import com.example.shiftintensivelivecoding.details.presentation.DetailsState
+import com.example.shiftintensivelivecoding.details.presentation.DetailsViewModel
 
 @Composable
 fun DetailsScreen(

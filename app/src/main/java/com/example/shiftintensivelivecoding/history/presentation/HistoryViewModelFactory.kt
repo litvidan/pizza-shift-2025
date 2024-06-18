@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.history
+package com.example.shiftintensivelivecoding.history.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

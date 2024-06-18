@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.history
+package com.example.shiftintensivelivecoding.history.presentation
 
 import com.example.shiftintensivelivecoding.data.LoanHistoryItem
 

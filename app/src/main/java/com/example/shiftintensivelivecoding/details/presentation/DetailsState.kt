@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.details
+package com.example.shiftintensivelivecoding.details.presentation
 
 import com.example.shiftintensivelivecoding.data.Loan
 

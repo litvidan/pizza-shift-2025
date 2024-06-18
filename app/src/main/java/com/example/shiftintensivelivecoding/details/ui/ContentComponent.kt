@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.details
+package com.example.shiftintensivelivecoding.details.ui
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Column

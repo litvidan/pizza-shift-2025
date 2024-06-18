@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.details
+package com.example.shiftintensivelivecoding.details.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
