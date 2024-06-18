@@ -1,6 +1,6 @@
 package com.example.shiftintensivelivecoding.history.presentation
 
-import com.example.shiftintensivelivecoding.data.LoanHistoryItem
+import com.example.shiftintensivelivecoding.history.domain.entity.LoanHistoryItem
 
 sealed interface HistoryState {
 

@@ -2,14 +2,14 @@ package com.example.shiftintensivelivecoding.history.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.shiftintensivelivecoding.data.LoanRepository
+import com.example.shiftintensivelivecoding.history.domain.usecase.GetLoanHistoryItemsUseCase
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class HistoryViewModel(
-	private val loanRepository: LoanRepository,
+	private val getLoanHistoryItemsUseCase: GetLoanHistoryItemsUseCase,
 ) : ViewModel() {
 
 	private val _state = MutableStateFlow<HistoryState>(HistoryState.Initial)
@@ -20,7 +20,7 @@ class HistoryViewModel(
 			_state.value = HistoryState.Loading
 
 			try {
-				val loans = loanRepository.getAll()
+				val loans = getLoanHistoryItemsUseCase()
 				_state.value = HistoryState.Content(loans)
 			} catch (ce: CancellationException) {
 				throw ce

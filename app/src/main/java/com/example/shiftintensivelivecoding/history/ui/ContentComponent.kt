@@ -16,9 +16,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.shiftintensivelivecoding.R
-import com.example.shiftintensivelivecoding.data.LoanHistoryItem
 import com.example.shiftintensivelivecoding.formatAmountText
 import com.example.shiftintensivelivecoding.formatLoanStatus
+import com.example.shiftintensivelivecoding.history.domain.entity.LoanHistoryItem
 
 @Composable
 fun ContentComponent(
