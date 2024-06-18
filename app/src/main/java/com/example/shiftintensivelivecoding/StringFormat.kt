@@ -5,7 +5,6 @@ import androidx.compose.ui.res.stringResource
 import com.example.shiftintensivelivecoding.common.domain.LoanStatus
 import java.text.NumberFormat
 import java.util.Locale
-import com.example.shiftintensivelivecoding.data.LoanStatus as OldLoanStatus
 
 @Composable
 fun formatAmountText(amount: Long): String {
@@ -19,12 +18,4 @@ fun formatLoanStatus(status: LoanStatus): String =
 		LoanStatus.APPROVED   -> stringResource(R.string.approved)
 		LoanStatus.REGISTERED -> stringResource(R.string.registered)
 		LoanStatus.REJECTED   -> stringResource(R.string.rejected)
-	}
-
-@Composable
-fun formatLoanStatus(status: OldLoanStatus): String =
-	when (status) {
-		OldLoanStatus.APPROVED   -> stringResource(R.string.approved)
-		OldLoanStatus.REGISTERED -> stringResource(R.string.registered)
-		OldLoanStatus.REJECTED   -> stringResource(R.string.rejected)
 	}

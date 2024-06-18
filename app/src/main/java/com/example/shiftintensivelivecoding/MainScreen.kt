@@ -7,7 +7,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.example.shiftintensivelivecoding.data.LoanRepository
 import com.example.shiftintensivelivecoding.details.DetailsRoute
 import com.example.shiftintensivelivecoding.history.HistoryRoute
 import com.example.shiftintensivelivecoding.details.domain.usecase.GetLoanUseCase
@@ -21,7 +20,6 @@ import com.example.shiftintensivelivecoding.history.ui.HistoryScreen
 
 @Composable
 fun MainScreen(
-	repository: LoanRepository,
 	getLoanHistoryItemsUseCase: GetLoanHistoryItemsUseCase,
 	getLoanUseCase: GetLoanUseCase,
 ) {

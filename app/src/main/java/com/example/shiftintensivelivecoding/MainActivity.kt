@@ -3,7 +3,6 @@ package com.example.shiftintensivelivecoding
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.shiftintensivelivecoding.data.LoanRepository
 import com.example.shiftintensivelivecoding.details.data.converter.LoanConverter
 import com.example.shiftintensivelivecoding.details.data.network.LoanApi
 import com.example.shiftintensivelivecoding.details.data.repository.LoanRepositoryImpl
@@ -18,8 +17,6 @@ import com.example.shiftintensivelivecoding.ui.theme.ShiftIntensiveLiveCodingThe
 class MainActivity : ComponentActivity() {
 
 	private val networkModule = NetworkModule()
-
-	val repository = LoanRepository()
 
 	private val loanHistoryApi = networkModule.retrofit.create(LoanHistoryApi::class.java)
 	private val loanHistoryItemConverter = LoanHistoryItemConverter()
@@ -36,7 +33,6 @@ class MainActivity : ComponentActivity() {
 		setContent {
 			ShiftIntensiveLiveCodingTheme {
 				MainScreen(
-					repository = repository,
 					getLoanHistoryItemsUseCase = getLoanHistoryItemsUseCase,
 					getLoanUseCase = getLoanUseCase,
 				)
