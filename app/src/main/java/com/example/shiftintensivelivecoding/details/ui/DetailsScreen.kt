@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.details
+package com.example.shiftintensivelivecoding.details.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,27 +8,23 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.shiftintensivelivecoding.R
-import com.example.shiftintensivelivecoding.data.LoanRepository
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
+import com.example.shiftintensivelivecoding.details.presentation.DetailsState
+import com.example.shiftintensivelivecoding.details.presentation.DetailsViewModel
 
 @Composable
-fun DetailsScreen(loanId: Long, repository: LoanRepository) {
-	val scope = rememberCoroutineScope()
-	var detailsState by remember { mutableStateOf<DetailsState>(DetailsState.Initial) }
+fun DetailsScreen(
+	viewModel: DetailsViewModel,
+) {
+	val detailsState by viewModel.state.collectAsState()
 
 	LaunchedEffect(Unit) {
-		loadLoan(loanId, repository, setDetailsState = { detailsState = it })
+		viewModel.loadLoan()
 	}
 
 	Column(modifier = Modifier.fillMaxSize()) {
@@ -47,32 +43,13 @@ fun DetailsScreen(loanId: Long, repository: LoanRepository) {
 			is DetailsState.Failure -> ErrorComponent(
 				message = state.message ?: stringResource(id = R.string.error_unknown_error),
 				onRetry = {
-					scope.loadLoan(loanId, repository, setDetailsState = { detailsState = it })
+					viewModel.loadLoan()
 				}
 			)
 
 			is DetailsState.Content -> ContentComponent(
 				loan = state.loan,
 			)
-		}
-	}
-}
-
-private fun CoroutineScope.loadLoan(
-	loanId: Long,
-	repository: LoanRepository,
-	setDetailsState: (DetailsState) -> Unit,
-) {
-	launch {
-		setDetailsState(DetailsState.Loading)
-
-		try {
-			val loan = repository.get(loanId = loanId)
-			setDetailsState(DetailsState.Content(loan))
-		} catch (ce: CancellationException) {
-			throw ce
-		} catch (ex: Exception) {
-			setDetailsState(DetailsState.Failure(ex.message))
 		}
 	}
 }

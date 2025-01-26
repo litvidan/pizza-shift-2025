@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.data
+package com.example.shiftintensivelivecoding
 
 import kotlinx.serialization.json.Json
 import okhttp3.Interceptor
@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import java.util.concurrent.TimeUnit
 
-class LoanRepository {
+class NetworkModule {
 
 	private companion object {
 
@@ -20,7 +20,7 @@ class LoanRepository {
 		const val READ_TIMEOUT = 10L
 	}
 
-	private val retrofit = Retrofit.Builder()
+	val retrofit = Retrofit.Builder()
 		.client(provideOkHttpClientWithProgress())
 		.baseUrl(BASE_URL)
 		.addConverterFactory(provideKotlinXSerializationFactory())
@@ -41,14 +41,4 @@ class LoanRepository {
 		HttpLoggingInterceptor().apply {
 			level = HttpLoggingInterceptor.Level.BODY
 		}
-
-	private val loanApi by lazy {
-		retrofit.create(LoansApi::class.java)
-	}
-
-	suspend fun getAll(): List<LoanHistoryItem> =
-		loanApi.getAll()
-
-	suspend fun get(loanId: Long): Loan =
-		loanApi.get(loanId)
 }

@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.data
+package com.example.shiftintensivelivecoding.common.domain
 
 enum class LoanStatus {
 	APPROVED,

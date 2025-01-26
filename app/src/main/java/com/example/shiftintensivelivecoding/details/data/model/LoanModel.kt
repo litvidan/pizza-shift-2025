@@ -1,11 +1,13 @@
-package com.example.shiftintensivelivecoding.data
+package com.example.shiftintensivelivecoding.details.data.model
 
+import com.example.shiftintensivelivecoding.common.domain.LoanStatus
+import com.example.shiftintensivelivecoding.details.data.converter.LocalDateTimeSerializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import java.time.LocalDateTime
 
 @Serializable
-data class Loan(
+data class LoanModel(
 	val id: Long,
 	@SerialName("first_name")
 	val firstName: String,

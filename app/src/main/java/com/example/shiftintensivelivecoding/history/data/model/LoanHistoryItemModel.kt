@@ -1,10 +1,11 @@
-package com.example.shiftintensivelivecoding.data
+package com.example.shiftintensivelivecoding.history.data.model
 
+import com.example.shiftintensivelivecoding.common.domain.LoanStatus
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class LoanHistoryItem(
+data class LoanHistoryItemModel(
 	val id: Long,
 	@SerialName("first_name")
 	val firstName: String,

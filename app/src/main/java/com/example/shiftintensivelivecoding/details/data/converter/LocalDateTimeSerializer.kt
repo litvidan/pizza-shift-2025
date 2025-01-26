@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.data
+package com.example.shiftintensivelivecoding.details.data.converter
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.descriptors.PrimitiveKind

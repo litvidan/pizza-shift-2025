@@ -2,7 +2,7 @@ package com.example.shiftintensivelivecoding
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.example.shiftintensivelivecoding.data.LoanStatus
+import com.example.shiftintensivelivecoding.common.domain.LoanStatus
 import java.text.NumberFormat
 import java.util.Locale
 

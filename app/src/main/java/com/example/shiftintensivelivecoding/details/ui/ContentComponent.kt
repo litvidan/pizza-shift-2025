@@ -1,4 +1,4 @@
-package com.example.shiftintensivelivecoding.details
+package com.example.shiftintensivelivecoding.details.ui
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Column
@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.shiftintensivelivecoding.R
-import com.example.shiftintensivelivecoding.data.Loan
+import com.example.shiftintensivelivecoding.details.domain.entity.Loan
 import com.example.shiftintensivelivecoding.formatAmountText
 import com.example.shiftintensivelivecoding.formatLoanStatus
 import java.time.LocalDateTime
