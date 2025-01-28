@@ -67,7 +67,7 @@ val DarkColors = darkColorScheme(
 )
 
 @Composable
-fun ShiftIntensiveLiveCodingTheme(
+fun ShiftPizzaTheme(
 	darkTheme: Boolean = isSystemInDarkTheme(),
 	content: @Composable () -> Unit
 ) {

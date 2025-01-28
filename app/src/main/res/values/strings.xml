@@ -1,29 +1,3 @@
 <resources>
-	<string name="app_name">ShiftIntensiveLiveCoding</string>
-
-	<string name="ruble">₽</string>
-	<string name="approved">Одобрена</string>
-	<string name="registered">На рассмотрении</string>
-	<string name="rejected">Отклонена</string>
-	<string name="error_title">Произошла ошибка</string>
-	<string name="error_try_again">Повторить</string>
-	<string name="error_unknown_error">Неизвестная ошибка</string>
-
-	<!--	History Screen -->
-	<string name="history_name_pattern">%s %s.</string>
-	<string name="history_title">Список займов</string>
-	<string name="history_amount_with_percent_pattern">%s под %.2f%%</string>
-
-	<!--	Details Screen -->
-	<string name="details_title">Детали займа</string>
-	<string name="details_first_name">Имя</string>
-	<string name="details_last_name">Фамилия</string>
-	<string name="details_amount">Сумма</string>
-	<string name="details_percent">Процент</string>
-	<string name="details_percent_pattern">%.2f%%</string>
-	<string name="details_status">Статус займа</string>
-	<string name="details_phone">Телефон</string>
-	<string name="details_issue_date">Дата</string>
-	<string name="details_period">Период</string>
-	<string name="details_period_pattern">%d мес.</string>
+	<string name="app_name">PizzaSHIFT</string>
 </resources>

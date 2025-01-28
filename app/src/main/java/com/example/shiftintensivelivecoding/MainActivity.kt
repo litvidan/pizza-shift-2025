@@ -12,7 +12,7 @@ import com.example.shiftintensivelivecoding.history.data.network.LoanHistoryApi
 import com.example.shiftintensivelivecoding.history.data.repository.LoanHistoryRepositoryImpl
 import com.example.shiftintensivelivecoding.history.domain.repository.LoanHistoryRepository
 import com.example.shiftintensivelivecoding.history.domain.usecase.GetLoanHistoryItemsUseCase
-import com.example.shiftintensivelivecoding.ui.theme.ShiftIntensiveLiveCodingTheme
+import com.example.shiftintensivelivecoding.ui.theme.ShiftPizzaTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContent {
-			ShiftIntensiveLiveCodingTheme {
+			ShiftPizzaTheme {
 				MainScreen(
 					getLoanHistoryItemsUseCase = getLoanHistoryItemsUseCase,
 					getLoanUseCase = getLoanUseCase,
