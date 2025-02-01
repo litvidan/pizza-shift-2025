@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-	namespace = "com.example.shiftintensivelivecoding"
+	namespace = "com.example.pizzashift2025"
 	compileSdk = 34
 
 	defaultConfig {
-		applicationId = "com.example.shiftintensivelivecoding"
+		applicationId = "com.example.pizzashift2025"
 		minSdk = 26
 		targetSdk = 34
 		versionCode = 1
@@ -67,6 +67,16 @@ dependencies {
 	implementation(libs.retrofit.core)
 	implementation(libs.retrofit.converter.kotlinxserialization)
 	implementation(libs.okhttp.logginginterceptor)
+
+	// Coil для загрузки изображений в Compose
+	implementation(libs.coil.compose)
+
+	// Koin Core
+	implementation(libs.koin.core)
+	// Koin для Android
+	implementation(libs.koin.android)
+	// Koin для Jetpack Compose
+	implementation(libs.koin.compose)
 
 	// Сериализация JSON
 	implementation(libs.kotlinx.serialization.json)

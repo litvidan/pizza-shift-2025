@@ -1,3 +1,13 @@
 <resources>
 	<string name="app_name">PizzaSHIFT</string>
+
+	<string name="price_pattern">От %s ₽</string>
+
+	<string name="error_title">Произошла ошибка</string>
+	<string name="error_try_again">Повторить</string>
+	<string name="error_unknown_error">Неизвестная ошибка</string>
+
+	<string name="catalog_title">Каталог</string>
+
+	<string name="api_base">https://shift-intensive.ru/api%s</string>
 </resources>
